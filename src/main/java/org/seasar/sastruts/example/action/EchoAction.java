@@ -1,0 +1,26 @@
+package org.seasar.sastruts.example.action;
+
+import javax.annotation.Resource;
+
+import org.seasar.sastruts.example.form.EchoForm;
+import org.seasar.struts.annotation.ActionForm;
+import org.seasar.struts.annotation.Execute;
+
+public class EchoAction {
+	/** アクションフォーム */
+	@Resource
+	@ActionForm
+	public EchoForm echoForm;
+
+	/** 入力画面の実行メソッド */
+	@Execute(validator=false)
+	public String index() {
+		return "input.jsp";
+	}
+
+	/** エコー画面の実行メソッド */
+	@Execute(validator=false)
+	public String echo() {
+		return "echo.jsp";
+	}
+}
